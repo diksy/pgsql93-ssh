@@ -1,0 +1,11 @@
+Simple Use (ssh password must be set manually by enter to the container):
+- docker run -p 5432:5432 -p 221:22 -d diksy/pgsql93-ssh
+
+Use SSH Public Key:
+- docker run -p 5432:5432 -p 221:22 -v /path/to/.ssh/dir:/root/.ssh -d diksy/pgsql93-ssh
+
+Persistent Log Dir:
+- docker run -p 5432:5432 -p 221:22 -v /path/to/log/dir:/var/log/supervisor -d diksy/pgsql93-ssh
+
+If you want to persistent pgsql93 data, first you must sync /var/lib/postgresql/9.6/main/ to host directory. Then, re-deploy container with:
+- docker run -p 5432:5432 -p 221:22 -v /path/to/host/dir:/var/lib/postgresql/9.6/main -d diksy/pgsql93-ssh
