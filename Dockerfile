@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:jessie
 MAINTAINER Diksy M. Firmansyah <diksy@unej.ac.id>
 ENV DEBIAN_FRONTEND noninteractive
 
